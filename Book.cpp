@@ -101,10 +101,19 @@ Book.cpp: Implementations of all the book items needed to move all the objects f
         author_ = std::move(rhs.author_);
         ISBN_ = std::move(rhs.ISBN_);
         price_ = std::move(rhs.price_);
+        
+        //delete[] icon_;          // move and reasign
+        if (icon_ != nullptr) {
+            delete[] icon_;
+        }
+
+        // Move icon_ from rhs to this
+        icon_ = std::move(rhs.icon_);
+        rhs.icon_ = nullptr;
+        
         keywords_ = std::move(rhs.keywords_);
         blurb_ = std::move(rhs.blurb_);
 
-        
     }
 
     return *this;
@@ -277,7 +286,6 @@ Book.cpp: Implementations of all the book items needed to move all the objects f
 
     for (auto it = keywords.begin(); it != keywords.end(); ++it) {
         std::cout << *it;
-        
         // Check if it's not the last keyword, then print the comma
         if (it != lastKeyword) {
             std::cout << ", ";
@@ -289,4 +297,5 @@ Book.cpp: Implementations of all the book items needed to move all the objects f
 
     // Print blurb using getter method
     std::cout << "Blurb: " << getBlurb() << std::endl;
+    std::cout << std::endl;
     }

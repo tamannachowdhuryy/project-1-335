@@ -126,10 +126,10 @@ int main(){
 //     }
 
  // Test: Print all books in the catalog
-  for (const auto& temp : catalog) {
-    temp.print();
-    std::cout << "----------------------------------\n";
-  }
+  // for (const auto& temp : catalog) {
+  //   temp.print();
+  //   std::cout << "----------------------------------\n";
+  // }
   //Test Case 1: keyword "Paranormal Romance" 
   // std::cout << "Test Case 1:\n";
   // moveAll("Paranormal Romance", catalog, cart);
@@ -141,9 +141,11 @@ int main(){
   // std::cout << "----------------------------------\n";
   
  // Test Case 3: keyword "Social Science" 
-  // std::cout << "Test Case 3:\n";
-  // moveAll("Mauritius", catalog, cart);
-  // std::cout << "----------------------------------\n";
-
+  std::cout << "Test Case 3:\n";
+  moveAll("Mauritius", catalog, cart);
+  for (const auto& book : cart) {
+    book.print();  // Assuming you have a print function in your Book class
+  } 
+ 
   return 0;
 }
