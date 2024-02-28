@@ -114,12 +114,12 @@ int main(){
 
   // write your test cases here
   
-for (const auto &book : catalog) {
-        book.print();
-        std::cout << "---------------------" << std::endl;
-    }
+// for (const auto &book : catalog) {
+//         book.print();
+//         std::cout << "---------------------" << std::endl;
+//     }
 
-  //Test: Print all books in the catalog
+ // Test: Print all books in the catalog
   // for (const auto& temp : catalog) {
   //   temp.print();
   //   std::cout << "----------------------------------\n";
@@ -127,22 +127,17 @@ for (const auto &book : catalog) {
   //Test Case 1: keyword "Paranormal Romance" 
   // std::cout << "Test Case 1:\n";
   // moveAll("Paranormal Romance", catalog, cart);
-  // for (const auto& book : cart) {
-  //   book.print();
-  //   std::cout << "----------------------------------\n";
-  // }
-
-  
+  // std::cout << "----------------------------------\n";
 
   // // Test Case 2: keyword "Fandom" 
   // std::cout << "Test Case 2:\n";
   // moveAll("Fandom", catalog, cart);
   // std::cout << "----------------------------------\n";
-
-  // Test Case 3: keyword "Social Science" 
-  // std::cout << "Test Case 3:\n";
-  // moveAll("Social Science", catalog, cart);
-  // std::cout << "----------------------------------\n";
+  
+ // Test Case 3: keyword "Social Science" 
+  std::cout << "Test Case 3:\n";
+  moveAll("Mauritius", catalog, cart);
+  std::cout << "----------------------------------\n";
 
   return 0;
 }

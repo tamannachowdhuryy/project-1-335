@@ -34,9 +34,20 @@ Book.cpp: Implementations of all the book items needed to move all the objects f
         * Copy Constructor  
         * @param: Get the rhs of everything in the private member    
     */
-    Book::Book(const Book& rhs): title_(rhs.title_), author_(rhs.author_), ISBN_(rhs.ISBN_), price_(rhs.price_), icon_(nullptr), keywords_(rhs.keywords_), blurb_(rhs.blurb_)
+    Book::Book(const Book& rhs): title_(rhs.title_), author_(rhs.author_), ISBN_(rhs.ISBN_), price_(rhs.price_), keywords_(rhs.keywords_), blurb_(rhs.blurb_)
     {
+        
 
+        // Perform a deep copy of icon_
+        if (rhs.icon_) {
+            icon_ = new int[80];
+            for (int i = 0; i < 80; ++i) {
+                icon_[i] = rhs.icon_[i];
+            }
+        } else {
+            icon_ = nullptr;
+        }
+       
     }
 
     /*
@@ -53,10 +64,17 @@ Book.cpp: Implementations of all the book items needed to move all the objects f
             ISBN_ = rhs.ISBN_; 
             keywords_ = rhs.keywords_; 
             price_ = rhs.price_;
-            if (icon_) {
-                delete[] icon_;  
+            
+
+            // Perform a deep copy of icon_
+            if (rhs.icon_) {
+                icon_ = new int[80];
+                for (int i = 0; i < 80; ++i) {
+                    icon_[i] = rhs.icon_[i];
+                }
+            } else {
+                icon_ = nullptr;
             }
-            icon_ = rhs.icon_;
         }
         return *this;
     }
@@ -86,19 +104,7 @@ Book.cpp: Implementations of all the book items needed to move all the objects f
         keywords_ = std::move(rhs.keywords_);
         blurb_ = std::move(rhs.blurb_);
 
-        // Release existing memory
-        delete[] icon_;
-
-        // Perform a deep copy of icon_
-        if (rhs.icon_) {
-            icon_ = new int[80];
-            for (int i = 0; i < 80; ++i) {
-                icon_[i] = rhs.icon_[i];
-            }
-        } else {
-            icon_ = nullptr;
-        }
-        rhs.icon_ = nullptr;
+        
     }
 
     return *this;
