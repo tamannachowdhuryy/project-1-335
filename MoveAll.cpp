@@ -1,3 +1,9 @@
+/*
+CSCI 335 Spring 2024
+Assignment 1 - Book
+Name: Tamanna Chowdhury
+Book.cpp: Implementations of all the book items needed to move all the objects from one location to another 
+*/
 #include "MoveAll.hpp"
 #include "Book.hpp"
 

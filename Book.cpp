@@ -272,10 +272,20 @@ Book.cpp: Implementations of all the book items needed to move all the objects f
 
     // Print keywords using getter method
     std::cout << "Keywords: ";
-    for (const auto& keyword : getKeywords()) {
-        std::cout << keyword << " ";
+    auto keywords = getKeywords();
+    auto lastKeyword = keywords.end() - 1;  // Get iterator to the last element
+
+    for (auto it = keywords.begin(); it != keywords.end(); ++it) {
+        std::cout << *it;
+        
+        // Check if it's not the last keyword, then print the comma
+        if (it != lastKeyword) {
+            std::cout << ", ";
+        }
     }
+
     std::cout << std::endl;
+
 
     // Print blurb using getter method
     std::cout << "Blurb: " << getBlurb() << std::endl;
