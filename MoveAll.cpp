@@ -31,15 +31,14 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
     const std::vector<std::string>& keywords = it->getKeywords(); // Access private member 
     
     // Manual loop to find keyword
-    bool foundKeyword = false;
+    bool found = false;
     for (const auto& kw : keywords) {
         if (kw == keyword) {
-            foundKeyword = true;
-            break;
+            found = true;
         }
     }
     // if keyword is found then it will move if not it will go to the next item
-    if (foundKeyword) {
+    if (found) {
         dest.push_back(std::move(*it));
         it = source.erase(it);
         ++books_moved;
@@ -48,7 +47,7 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
     }
   }
 
-  
+ 
   // DO NOT ALTER BELOW HERE
   const auto t1_end = std::chrono::steady_clock::now();
   int t1 = std::chrono::duration <double, std::micro> (t1_end - t1_start).count();
