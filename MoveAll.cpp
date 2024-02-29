@@ -25,10 +25,10 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
       if matched
         move the book source to dest using the std::move and increment the book that was being moved
   */
-
+  // first looks through the iterator 
   auto it = source.begin();
   while (it != source.end()) {
-    const std::vector<std::string>& keywords = it->getKeywords(); // Access private member using .
+    const std::vector<std::string>& keywords = it->getKeywords(); // Access private member 
     
     // Manual loop to find keyword
     bool foundKeyword = false;
@@ -38,7 +38,7 @@ void moveAll (const std::string keyword, std::vector<Book> &source, std::vector<
             break;
         }
     }
-
+    // if keyword is found then it will move if not it will go to the next item
     if (foundKeyword) {
         dest.push_back(std::move(*it));
         it = source.erase(it);

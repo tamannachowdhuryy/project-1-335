@@ -36,9 +36,7 @@ Book.cpp: Implementations of all the book items needed to move all the objects f
     */
     Book::Book(const Book& rhs): title_(rhs.title_), author_(rhs.author_), ISBN_(rhs.ISBN_), price_(rhs.price_), keywords_(rhs.keywords_), blurb_(rhs.blurb_)
     {
-        
-
-        // Perform a deep copy of icon_
+        // deep copy of icon_
         if (rhs.icon_) {
             icon_ = new int[80];
             for (int i = 0; i < 80; ++i) {
@@ -102,7 +100,6 @@ Book.cpp: Implementations of all the book items needed to move all the objects f
         ISBN_ = std::move(rhs.ISBN_);
         price_ = std::move(rhs.price_);
         
-        //delete[] icon_;          // move and reasign
         if (icon_ != nullptr) {
             delete[] icon_;
         }

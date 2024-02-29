@@ -119,33 +119,40 @@ int main(){
   }
 
   // write your test cases here
-  
-// for (const auto &book : catalog) {
-//         book.print();
-//         std::cout << "---------------------" << std::endl;
-//     }
 
  // Test: Print all books in the catalog
   // for (const auto& temp : catalog) {
   //   temp.print();
   //   std::cout << "----------------------------------\n";
   // }
-  //Test Case 1: keyword "Paranormal Romance" 
-  // std::cout << "Test Case 1:\n";
-  // moveAll("Paranormal Romance", catalog, cart);
-  // std::cout << "----------------------------------\n";
 
-  // // Test Case 2: keyword "Fandom" 
-  // std::cout << "Test Case 2:\n";
-  // moveAll("Fandom", catalog, cart);
-  // std::cout << "----------------------------------\n";
+  //Test Case 1: keyword "Paranormal Romance" 
+  std::cout << "Test Case 1:\n";
+  moveAll("Paranormal Romance", catalog, cart);
+  std::cout << "----------------------------------\n";
+
+  // Test Case 2: keyword "Fandom" 
+  std::cout << "Test Case 2:\n";
+  moveAll("Fandom", catalog, cart);
+  std::cout << "----------------------------------\n";
   
- // Test Case 3: keyword "Social Science" 
+  //Test Case 3: keyword "Social Science" 
   std::cout << "Test Case 3:\n";
   moveAll("Mauritius", catalog, cart);
-  for (const auto& book : cart) {
-    book.print();  // Assuming you have a print function in your Book class
-  } 
- 
+  // for (const auto& book : cart) {
+  //   book.print();  // prints all the books the keyword has 
+  // } 
+  std::cout << "----------------------------------\n";
+
+  // Test Case 4: keyword "Literary Fiction" 
+  std::cout << "Test Case 4:\n";
+  moveAll("Literary Fiction", catalog, cart);
+  std::cout << "----------------------------------\n";
+
+  // Test Case 5: keyword "Graphic Novels Manga" 
+  std::cout << "Test Case 5:\n";
+  moveAll("Graphic Novels Manga", catalog, cart);
+  std::cout << "----------------------------------\n";
+
   return 0;
 }
